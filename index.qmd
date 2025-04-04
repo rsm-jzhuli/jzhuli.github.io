@@ -1,0 +1,19 @@
+---
+title: "Jun Zhu Li"
+image: "images/profile_pic.png"
+about:
+  template: jolla
+  links: 
+    - icon: envelope
+      href: mailto:jzhuuli@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/junzhuli
+---
+
+Here is a paragraph about me!
+
+```{python}
+print("Jun is the best")
+```
+
+

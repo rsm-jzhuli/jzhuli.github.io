@@ -1,0 +1,12 @@
+{
+  "hash": "94eee6a943a2a109d6d617d8b6d84cca",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Jun Zhu Li\"\nimage: \"images/profile_pic.png\"\nabout:\n  template: jolla\n  links: \n    - icon: envelope\n      href: mailto:jzhuuli@gmail.com\n    - icon: linkedin\n      href: https://www.linkedin.com/in/junzhuli\n---\n\n\n\n\n\nHere is a paragraph about me!\n\n::: {#1922c20b .cell execution_count=1}\n``` {.python .cell-code}\nprint(\"Jun is the best\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nJun is the best\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

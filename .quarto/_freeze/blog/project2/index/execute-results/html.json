@@ -1,0 +1,12 @@
+{
+  "hash": "dedf670b6ca7e9e3417f33a4be8ddadb",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: This is Project 2\n---\n\n\n\n## Section 1: Data\n\nI cleaned some data\n\n## Section 2: Analysis\n\nI analyzed the data\n\n\n::: {#67b86f14 .cell execution_count=1}\n``` {.python .cell-code}\nimport matplotlib.pyplot as plt\n\n# Sample mtcars dataset\nwt = [2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.440,\n      3.440, 4.070, 3.730, 3.780, 5.250, 5.424, 5.345, 2.200, 1.615, 1.835,\n      2.465, 3.520, 3.435, 3.840, 3.845, 1.935, 2.140, 1.513, 3.170, 2.770,\n      3.570, 2.780]\n\nmpg = [21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2,\n       17.8, 16.4, 17.3, 15.2, 10.4, 10.4, 14.7, 32.4, 30.4, 33.9,\n       21.5, 15.5, 15.2, 13.3, 19.2, 27.3, 26.0, 30.4, 15.8, 19.7,\n       15.0, 21.4]\n\n# Scatter plot\nplt.scatter(wt, mpg)\n\n# Labels and title\nplt.xlabel('Weight')\nplt.ylabel('Miles per Gallon (mpg)')\nplt.title('Scatter Plot of Weight vs. MPG')\n\n# Display plot\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-2-output-1.png){width=585 height=449}\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
