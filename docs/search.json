@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Jun Zhu Li",
     "section": "",
-    "text": "Here is a paragraph about me!\n\nprint(\"Jun is the best\")\n\nJun is the best"
+    "text": "I’m a passionate and dedicated professional experienced in Data Science, Web Development, Open Source Contributions, and Tech Writing. I thrive when working on creative, challenging projects and enjoy collaborating with others to solve exciting problems.\nExplore my Resume or dive into my Projects to learn more about my work and experiences!\n\n🚀 Interests\n\n🧑‍💻 Data Science\n🌐 Web Development\n🤝 Open Source Contributions\n✍️ Tech Writing\n\n\n\n📫 Let’s Connect!\nI’m always open to discussing new ideas and opportunities. Reach out via email at jzhuuli@gmail.com or find me on LinkedIn."
   },
   {
     "objectID": "resume.html",
@@ -68,5 +68,19 @@
     "title": "This is Project 2",
     "section": "Section 2: Analysis",
     "text": "Section 2: Analysis\nI analyzed the data\n\nimport matplotlib.pyplot as plt\n\n# Sample mtcars dataset\nwt = [2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.440,\n      3.440, 4.070, 3.730, 3.780, 5.250, 5.424, 5.345, 2.200, 1.615, 1.835,\n      2.465, 3.520, 3.435, 3.840, 3.845, 1.935, 2.140, 1.513, 3.170, 2.770,\n      3.570, 2.780]\n\nmpg = [21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2,\n       17.8, 16.4, 17.3, 15.2, 10.4, 10.4, 14.7, 32.4, 30.4, 33.9,\n       21.5, 15.5, 15.2, 13.3, 19.2, 27.3, 26.0, 30.4, 15.8, 19.7,\n       15.0, 21.4]\n\n# Scatter plot\nplt.scatter(wt, mpg)\n\n# Labels and title\nplt.xlabel('Weight')\nplt.ylabel('Miles per Gallon (mpg)')\nplt.title('Scatter Plot of Weight vs. MPG')\n\n# Display plot\nplt.show()"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Jun Zhu Li",
+    "section": "About Me",
+    "text": "About Me\nHi! I’m Jun Zhu Li, a passionate and dedicated professional with experience in [your field/expertise]. I love working on creative and challenging projects, continuously learning new skills, and collaborating with others to solve exciting problems.\nFeel free to explore my Resume or check out my Projects to learn more about my work!\n\n🚀 Interests\n\nData Science\nWeb Development\nOpen Source Contributions\nTech Writing\n\n\n\n📫 Get in Touch\nI’m always excited to discuss new opportunities and connect with interesting people. Reach out via email or connect with me on LinkedIn.\n\n\n# Quick Python Demo\nprint(\"Jun is the best!\")\n\nJun is the best!"
+  },
+  {
+    "objectID": "index.html#hi-im-jun-zhu-li",
+    "href": "index.html#hi-im-jun-zhu-li",
+    "title": "Jun Zhu Li",
+    "section": "",
+    "text": "I’m a passionate and dedicated professional experienced in Data Science, Web Development, Open Source Contributions, and Tech Writing. I thrive when working on creative, challenging projects and enjoy collaborating with others to solve exciting problems.\nExplore my Resume or dive into my Projects to learn more about my work and experiences!\n\n\n\n🧑‍💻 Data Science\n🌐 Web Development\n🤝 Open Source Contributions\n✍️ Tech Writing\n\n\n\n\nI’m always open to discussing new ideas and opportunities. Reach out via email at jzhuuli@gmail.com or find me on LinkedIn."
   }
 ]

@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -68,10 +34,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c9f0887447d3a639491f60c4af03832d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dc376453fc93729a66e4175d27e645db.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +70,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -123,7 +89,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./resume.html"> 
@@ -132,6 +98,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Projects</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:jzhuuli@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/junzhuli"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -144,10 +122,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+  <ul>
+  <li><a href="#interests" id="toc-interests" class="nav-link active" data-scroll-target="#interests">🚀 Interests</a></li>
+  <li><a href="#lets-connect" id="toc-lets-connect" class="nav-link" data-scroll-target="#lets-connect">📫 Let’s Connect!</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <div class="quarto-about-jolla">
-  <img src="images/profile_pic.png" class="about-image
+  <img src="images/profile_pic.jpg" class="about-image
   round " style="height: 15em; width: 15em;">
  <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -156,15 +142,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
   </div>
 </header><main class="content" id="quarto-document-content">
-<p>Here is a paragraph about me!</p>
-<div id="1922c20b" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jun is the best"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Jun is the best</code></pre>
-</div>
-</div>
+
+<p>I’m a passionate and dedicated professional experienced in <strong>Data Science</strong>, <strong>Web Development</strong>, <strong>Open Source Contributions</strong>, and <strong>Tech Writing</strong>. I thrive when working on creative, challenging projects and enjoy collaborating with others to solve exciting problems.</p>
+<p>Explore my <a href="./resume.html">Resume</a> or dive into my <a href="./blog.html">Projects</a> to learn more about my work and experiences!</p>
+<section id="interests" class="level3">
+<h3 data-anchor-id="interests">🚀 Interests</h3>
+<ul>
+<li>🧑‍💻 Data Science</li>
+<li>🌐 Web Development</li>
+<li>🤝 Open Source Contributions</li>
+<li>✍️ Tech Writing</li>
+</ul>
+</section>
+<section id="lets-connect" class="level3">
+<h3 data-anchor-id="lets-connect">📫 Let’s Connect!</h3>
+<p>I’m always open to discussing new ideas and opportunities. Reach out via email at <a href="mailto:jzhuuli@gmail.com">jzhuuli@gmail.com</a> or find me on <a href="https://www.linkedin.com/in/junzhuli">LinkedIn</a>.</p>
+<!-- ---
+title: "Jun Zhu Li"
+image: "images/profile_pic.jpg"
+about:
+  template: jolla
+  links: 
+    - icon: envelope
+      href: mailto:jzhuuli@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/junzhuli
+---
+Here is a paragraph about me! -->
 
 
+</section>
 </main> 
   <hr class="about-sep">
    <div class="about-links">

@@ -1,1 +1,30 @@
 /* css styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .navbar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  a {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #007bff;
+  }
+  
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  
+  img.profile-pic {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 20px;
+  }
+  

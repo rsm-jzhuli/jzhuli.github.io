@@ -1,6 +1,34 @@
 ---
 title: "Jun Zhu Li"
-image: "images/profile_pic.png"
+image: "images/profile_pic.jpg"
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      href: mailto:jzhuuli@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/junzhuli
+---
+
+I'm a passionate and dedicated professional experienced in **Data Science**, **Web Development**, **Open Source Contributions**, and **Tech Writing**. I thrive when working on creative, challenging projects and enjoy collaborating with others to solve exciting problems.
+
+Explore my [Resume](resume.qmd) or dive into my [Projects](blog.qmd) to learn more about my work and experiences!
+
+###  Interests
+
+- 🧑‍💻 Data Science
+- 🌐 Web Development
+- 🤝 Open Source Contributions
+- ✍️ Tech Writing
+
+### 📫 Let's Connect!
+
+I'm always open to discussing new ideas and opportunities. Reach out via email at [jzhuuli@gmail.com](mailto:jzhuuli@gmail.com) or find me on [LinkedIn](https://www.linkedin.com/in/junzhuli).
+
+
+<!-- ---
+title: "Jun Zhu Li"
+image: "images/profile_pic.jpg"
 about:
   template: jolla
   links: 
@@ -10,10 +38,4 @@ about:
       href: https://www.linkedin.com/in/junzhuli
 ---
 
-Here is a paragraph about me!
-
-```{python}
-print("Jun is the best")
-```
-
-
+Here is a paragraph about me! -->

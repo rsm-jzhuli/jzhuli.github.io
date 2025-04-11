@@ -1,23 +1,50 @@
+# project:
+#   type: website
+#   output-dir: docs
+  
+# website:
+#   title: "Jun's Website"
+#   navbar:
+#     left:
+#       - href: index.qmd
+#         text: About
+#       - resume.qmd
+#       - href: blog.qmd
+#         text: Projects
+
+# format:
+#   html:
+#     theme:
+#       - cosmo
+#       - brand
+#     css: styles.css
+#     toc: true
+
 project:
   type: website
   output-dir: docs
-  
+
 website:
   title: "Jun's Website"
   navbar:
     left:
-      - href: index.qmd
-        text: About
-      - resume.qmd
-      - href: blog.qmd
-        text: Projects
-
+      - text: "About Me"
+        href: index.qmd
+      - text: "Resume"
+        href: resume.qmd
+      - text: "Projects"
+        href: blog.qmd
+    right:
+      - icon: envelope
+        href: "mailto:jzhuuli@gmail.com"
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/junzhuli"
 format:
   html:
-    theme:
+    theme: 
       - cosmo
       - brand
     css: styles.css
     toc: true
-
+    highlight-style: monokai
 
