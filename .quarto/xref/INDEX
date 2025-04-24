@@ -13,5 +13,11 @@
   },
   "blog.qmd": {
     "blog.html": "0e71cb54"
+  },
+  "blog/hw1/hw1_questions.qmd": {
+    "hw1_questions.html": "fb6b6c40"
+  },
+  "blog/hw1/main.ipynb": {
+    "main.html": "a448e21d"
   }
 }
