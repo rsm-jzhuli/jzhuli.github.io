@@ -251,7 +251,7 @@ window.Quarto = {
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
-<div id="dc3e569b" class="cell" data-execution_count="1">
+<div id="c3423dcb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -264,7 +264,7 @@ window.Quarto = {
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>blueprinty_df <span class="op">=</span> pd.read_csv(<span class="st">'blueprinty.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Firms using Blueprinty’s software (customers) typically have more patents on average (around 4.13 patents) compared to non-customers (about 3.47 patents). The histograms reveal that both groups have distributions skewed toward lower numbers of patents, but Blueprinty customers generally have a higher frequency of firms with a larger number of patents. This preliminary analysis suggests a positive association between using Blueprinty’s software and obtaining patents.</p>
-<div id="4988575f" class="cell" data-execution_count="2">
+<div id="6f7dc463" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>blueprinty_df[blueprinty_df[<span class="st">'iscustomer'</span>] <span class="op">==</span> <span class="dv">0</span>][<span class="st">'patents'</span>].hist(alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Non-customer'</span>, bins<span class="op">=</span><span class="dv">20</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>blueprinty_df[blueprinty_df[<span class="st">'iscustomer'</span>] <span class="op">==</span> <span class="dv">1</span>][<span class="st">'patents'</span>].hist(alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Customer'</span>, bins<span class="op">=</span><span class="dv">20</span>)</span>
@@ -279,7 +279,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hw2_questions_files/figure-html/cell-3-output-1.png" width="819" height="454" class="figure-img"></p>
+<p><img src="hw2_questions_files/figure-html/cell-3-output-1.png" width="816" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -292,7 +292,7 @@ Name: patents, dtype: float64</code></pre>
 </div>
 <p>Blueprinty customers are not selected at random. It may be important to account for systematic differences in the age and regional location of customers vs non-customers.</p>
 <p>Customers and non-customers differ in regional representation: customers are predominantly located in the Northeast, whereas non-customers are more evenly spread across various regions. Regarding age, there’s little practical difference between the two groups, although customers tend to be slightly older on average (approximately 26.9 years) compared to non-customers (approximately 26.1 years). This indicates regional factors may play a role in the decision to adopt Blueprinty’s software, while age differences are relatively minor.</p>
-<div id="5bfca25c" class="cell" data-execution_count="3">
+<div id="e50deaec" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>region_counts <span class="op">=</span> pd.crosstab(blueprinty_df[<span class="st">'region'</span>], blueprinty_df[<span class="st">'iscustomer'</span>])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>region_counts.plot(kind<span class="op">=</span><span class="st">'bar'</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Number of Firms by Region and Customer Status"</span>)</span>
@@ -312,14 +312,14 @@ Name: patents, dtype: float64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hw2_questions_files/figure-html/cell-4-output-1.png" width="819" height="511" class="figure-img"></p>
+<p><img src="hw2_questions_files/figure-html/cell-4-output-1.png" width="816" height="506" class="figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hw2_questions_files/figure-html/cell-4-output-2.png" width="681" height="444" class="figure-img"></p>
+<p><img src="hw2_questions_files/figure-html/cell-4-output-2.png" width="678" height="440" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -341,7 +341,7 @@ Name: age, dtype: float64</code></pre>
 </p>
 <p>And the corresponding log-likelihood function is: &nbsp;<span class="math inline">\(\ell(\lambda|Y) = \sum_{i=1}^{n}\left[Y_i\log(\lambda) - \lambda - \log(Y_i!)\right]\)</span><br>
 </p>
-<div id="e22b02d8" class="cell" data-execution_count="4">
+<div id="5ec1da19" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_loglikelihood(lam, Y):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate the Poisson log-likelihood for given lambda and observed Y.</span></span>
@@ -361,7 +361,7 @@ Name: age, dtype: float64</code></pre>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> log_likelihood</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c7fa456a" class="cell" data-execution_count="5">
+<div id="fd0578b9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> blueprinty_df[<span class="st">'patents'</span>].values</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>lambda_values <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
@@ -380,7 +380,7 @@ Name: age, dtype: float64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hw2_questions_files/figure-html/cell-6-output-1.png" width="698" height="454" class="figure-img"></p>
+<p><img src="hw2_questions_files/figure-html/cell-6-output-1.png" width="695" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -401,7 +401,7 @@ Name: age, dtype: float64</code></pre>
 <p>&nbsp;<span class="math inline">\(\frac{\sum_{i=1}^{n} Y_i}{\lambda} - n = 0 \quad \Longrightarrow \quad \lambda = \frac{\sum_{i=1}^{n} Y_i}{n} = \bar{Y}\)</span><br>
 </p>
 <p>Thus, the maximum likelihood estimate for <span class="math inline">\((\lambda)\)</span> is simply the sample mean, <span class="math inline">\((\bar{Y})\)</span>, which intuitively makes sense since the mean of a Poisson distribution is <span class="math inline">\((\lambda)\)</span>.</p>
-<div id="efb418ea" class="cell" data-execution_count="6">
+<div id="c605b2dd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> blueprinty_df[<span class="st">'patents'</span>].values</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_poisson_loglikelihood(lam, Y):</span>
@@ -426,7 +426,7 @@ Name: age, dtype: float64</code></pre>
 <section id="estimation-of-poisson-regression-model" class="level3">
 <h3 class="anchored" data-anchor-id="estimation-of-poisson-regression-model">Estimation of Poisson Regression Model</h3>
 <p>Next, we extend our simple Poisson model to a Poisson Regression Model such that <span class="math inline">\(Y_i = \text{Poisson}(\lambda_i)\)</span> where <span class="math inline">\(\lambda_i = \exp(X_i'\beta)\)</span>. The interpretation is that the success rate of patent awards is not constant across all firms (<span class="math inline">\(\lambda\)</span>) but rather is a function of firm characteristics <span class="math inline">\(X_i\)</span>. Specifically, we will use the covariates age, age squared, region, and whether the firm is a customer of Blueprinty.</p>
-<div id="2a58a489" class="cell" data-execution_count="7">
+<div id="1fe82c75" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_regression_loglikelihood(beta, Y, X):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> np.asarray(beta, dtype<span class="op">=</span>np.float64)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    X_beta <span class="op">=</span> X <span class="op">@</span> beta</span>
@@ -436,7 +436,7 @@ Name: age, dtype: float64</code></pre>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    loglik <span class="op">=</span> np.<span class="bu">sum</span>(Y <span class="op">*</span> X_beta <span class="op">-</span> lambda_i <span class="op">-</span> log_factorials)</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>loglik</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8e1b6ba9" class="cell" data-execution_count="8">
+<div id="16660ab9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>blueprinty_df[<span class="st">'age_squared'</span>] <span class="op">=</span> blueprinty_df[<span class="st">'age'</span>] <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>blueprinty_df[[<span class="st">'age'</span>, <span class="st">'age_squared'</span>]] <span class="op">=</span> scaler.fit_transform(blueprinty_df[[<span class="st">'age'</span>, <span class="st">'age_squared'</span>]])</span>
@@ -485,7 +485,7 @@ region_South         0.056561    0.058948
 region_Southwest     0.050576    0.067469</code></pre>
 </div>
 </div>
-<div id="1bde9be7" class="cell" data-execution_count="9">
+<div id="1836c1e7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>X_clean <span class="op">=</span> X.drop(columns<span class="op">=</span><span class="st">'intercept'</span>, errors<span class="op">=</span><span class="st">'ignore'</span>).astype(<span class="bu">float</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>X_glm <span class="op">=</span> sm.add_constant(X_clean)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Y_numeric <span class="op">=</span> Y_vector.astype(<span class="bu">int</span>)</span>
@@ -600,7 +600,7 @@ Variable Definitions
 </div>
 </div>
 </div>
-<div id="ea483a37" class="cell" data-execution_count="10">
+<div id="a08318a3" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
@@ -608,7 +608,7 @@ Variable Definitions
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d41fb225" class="cell" data-execution_count="11">
+<div id="9bbde017" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>airbnb_missing <span class="op">=</span> airbnb_df.isna().<span class="bu">sum</span>()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>relevant_cols <span class="op">=</span> [</span>
@@ -703,10 +703,10 @@ Variable Definitions
 </div>
 </div>
 </div>
-<p>To understand what drives the number of reviews (used as a proxy for bookings), we ran a Poisson regression on several listing features in the Airbnb dataset. The results provide clear insights into what influences guest engagement and booking behavior. The strongest and most intuitive finding is that the longer a listing has been active (days), the more reviews it has. The coefficient is small (0.000051), but it’s applied to values that can be in the thousands, meaning its real-world impact is substantial. This simply reflects that more time online gives a listing more chances to be booked and reviewed.</p>
-<p>The “instant bookable” feature stands out as particularly important. Listings that can be booked instantly — without host approval — have a coefficient of 0.346, which means they are predicted to get about 41% more reviews than those that require approval exp(0.346)≈1.41). This is a large and meaningful effect, suggesting that hosts should enable this feature if they want to increase visibility and bookings. Cleanliness ratings also matter a lot. Each one-point increase in the cleanliness score is associated with a 12% increase in the number of reviews (coef = 0.113). This makes sense: guests reward clean listings with more bookings and reviews. However, two other review scores — location and value — surprisingly have negative coefficients (-0.077 and -0.091, respectively).</p>
-<p>This could mean that while those scores matter to guests’ satisfaction, they don’t directly drive higher booking rates, or it could reflect some counterintuitive relationship (like higher-rated locations needing fewer reviews to stay popular).</p>
-<p>Looking at room types, shared rooms receive significantly fewer reviews than entire homes (coef = -0.246), which aligns with common user preferences — people usually prefer privacy. Private rooms also see slightly fewer reviews compared to entire homes, but the effect is much smaller (-0.011). The model also finds a slight negative effect of price (-0.000018), indicating that higher-priced listings tend to receive marginally fewer reviews, likely because they are less frequently booked. Similarly, more bathrooms are associated with fewer reviews (-0.118), which might seem strange, but could reflect that listings with multiple bathrooms tend to be larger or more expensive properties booked less often.</p>
+<p>To understand what drives the number of reviews (used as a proxy for bookings), we ran a Poisson regression on several listing features in the Airbnb dataset. The results provide clear insights into what influences guest engagement and booking behavior. The strongest and most intuitive finding is that the longer a listing has been active (days), the more reviews it has. The coefficient is small (0.000051), but it’s applied to values that can be in the thousands, meaning its real world impact is substantial. This simply reflects that more time online gives a listing more chances to be booked and reviewed.</p>
+<p>The “instant bookable” feature stands out as particularly important. Listings that can be booked instantly, without host approval, have a coefficient of 0.346, which means they are predicted to get about 41% more reviews than those that require approval exp(0.346)≈1.41). This is a large and meaningful effect, suggesting that hosts should enable this feature if they want to increase visibility and bookings. Cleanliness ratings also matter a lot. Each one-point increase in the cleanliness score is associated with a 12% increase in the number of reviews (coef = 0.113). This makes sense: guests reward clean listings with more bookings and reviews. However, two other review scores, location and value, surprisingly have negative coefficients (-0.077 and -0.091, respectively).</p>
+<p>This could mean that while those scores matter to guests’ satisfaction, they don’t directly drive higher booking rates, or it could reflect some counterintuitive relationship (like higher rated locations needing fewer reviews to stay popular).</p>
+<p>Looking at room types, shared rooms receive significantly fewer reviews than entire homes (coef = -0.246), which aligns with common user preferences, people usually prefer privacy. Private rooms also see slightly fewer reviews compared to entire homes, but the effect is much smaller (-0.011). The model also finds a slight negative effect of price (-0.000018), indicating that higher-priced listings tend to receive marginally fewer reviews, likely because they are less frequently booked. Similarly, more bathrooms are associated with fewer reviews (-0.118), which might seem strange, but could reflect that listings with multiple bathrooms tend to be larger or more expensive properties booked less often.</p>
 
 
 </section>
