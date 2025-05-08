@@ -18,8 +18,8 @@ Explore my [Resume](resume.qmd) or dive into my [Projects](blog.qmd) to learn mo
 
 - 🧑‍💻 Data Science
 - 🌐 Web Development
-- 🤝 Open Source Contributions
-- ✍️ Tech Writing
+- 🤝 Business Analyst
+- ✍️ Strategic Consultant
 
 ### 📫 Let's Connect!
 
