@@ -3,8 +3,10 @@ title: "Multinomial Logit Model"
 author: "Jun Zhu Li"
 date: today
 jupyter: python3
+#callout-appearance: minimal
+code-fold: true
+code-tools: true
 ---
-
 
 This assignment expores two methods for estimating the MNL model: (1) via Maximum Likelihood, and (2) via a Bayesian approach using a Metropolis-Hastings MCMC algorithm. 
 
@@ -134,7 +136,7 @@ rm(list=setdiff(ls(), "conjoint_data"))
 ## 3. Preparing the Data for Estimation
 
 The "hard part" of the MNL likelihood function is organizing the data, as we need to keep track of 3 dimensions (consumer $i$, covariate $k$, and product $j$) instead of the typical 2 dimensions for cross-sectional regression models (consumer $i$ and covariate $k$). The fact that each task for each respondent has the same number of alternatives (3) helps.  In addition, we need to convert the categorical variables for brand and ads into binary variables.
-_todo: reshape and prep the data_
+
 ```{python}
 import pandas as pd
 
@@ -152,15 +154,14 @@ conjoint_data_prepped["choice_set"] = (
 # Sort the data
 conjoint_data_prepped = conjoint_data_prepped.sort_values(by=["resp", "task"])
 
-# Preview the first few rows
 conjoint_data_prepped.head()
 ```
 
 
 ## 4. Estimation via Maximum Likelihood
 
-_todo: Code up the log-likelihood function._
-_todo: Use `optim()` in R or `scipy.optimize()` in Python to find the MLEs for the 4 parameters ($\beta_\text{netflix}$, $\beta_\text{prime}$, $\beta_\text{ads}$, $\beta_\text{price}$), as well as their standard errors (from the Hessian). For each parameter construct a 95% confidence interval._
+We estimated the coefficients of the multinomial logit model using Maximum Likelihood Estimation and summarized the results in a table. Each row in the table corresponds to one of the key variables: whether the brand was Netflix or Prime (with Hulu as the baseline), whether the option included ads, and the price of the plan. The column labeled "Estimate" shows how each variable influences the probability of being chosen. A positive value indicates that the feature makes an option more likely to be selected, while a negative value suggests the opposite. The standard errors show how precise these estimates are, and the 95% confidence intervals provide a range in which we expect the true values to fall. Since none of the intervals include zero, we conclude that all four variables have a statistically significant effect on choice. Overall, the estimates confirm that people tend to prefer Netflix and Prime over Hulu, dislike advertisements, and are less likely to choose higher-priced options. These results are consistent with expectations and provide clear evidence of how these product features shape consumer decisions.
+
 ```{python}
 import numpy as np
 import pandas as pd
@@ -199,13 +200,11 @@ mle_betas = result.x
 hessian_inv = result.hess_inv
 standard_errors = np.sqrt(np.diag(hessian_inv))
 
-# Confidence intervals
 conf_intervals = np.vstack([
     mle_betas - 1.96 * standard_errors,
     mle_betas + 1.96 * standard_errors
 ]).T
 
-# Output as DataFrame
 params = ["Beta_Netflix", "Beta_Prime", "Beta_Ads", "Beta_Price"]
 mle_results = pd.DataFrame({
     "Parameter": params,
@@ -216,26 +215,18 @@ mle_results = pd.DataFrame({
 })
 
 mle_results
-
 ```
 ## 5. Estimation via Bayesian Methods
 
-_todo: code up a metropolis-hasting MCMC sampler of the posterior distribution. Take 11,000 steps and throw away the first 1,000, retaining the subsequent 10,000._
+We used a Bayesian approach to estimate the same four parameters from the multinomial logit model. This time, we applied a Metropolis-Hastings algorithm to draw samples from the posterior distribution, using weakly informative normal priors: N(0,5) for the binary variables and N(0,1) for the price coefficient. After discarding the initial 1,000 iterations as burn-in, we summarized the remaining 10,000 samples to calculate the posterior means, standard deviations, and 95% credible intervals.
 
-_hint: Use N(0,5) priors for the betas on the binary variables, and a N(0,1) prior for the price beta._
+The table of results looks very similar to what we obtained from the Maximum Likelihood Estimation in Section 4. For example, the posterior mean for $\beta_\text{netflix}$ was 0.946, very close to the MLE estimate of 0.941. The same pattern holds for the other parameters: the values are nearly identical, and the Bayesian credible intervals overlap substantially with the MLE confidence intervals. This consistency suggests that both estimation methods are providing stable and reliable insights. The slightly narrower standard deviations in the Bayesian results also suggest a modest gain in precision, likely due to the regularizing influence of the priors. Overall, the Bayesian approach confirms the key findings from the MLE: people prefer Netflix and Prime over Hulu, dislike ads, and are less likely to choose more expensive options.
 
-_hint: instead of calculating post=lik*prior, you can work in the log-space and calculate log-post = log-lik + log-prior (this should enable you to re-use your log-likelihood function from the MLE section just above)_
-
-_hint: King Markov (in the video) use a candidate distribution of a coin flip to decide whether to move left or right among his islands.  Unlike King Markov, we have 4 dimensions (because we have 4 betas) and our dimensions are continuous.  So, use a multivariate normal distribution to pospose the next location for the algorithm to move to. I recommend a MNV(mu, Sigma) where mu=c(0,0,0,0) and sigma has diagonal values c(0.05, 0.05, 0.05, 0.005) and zeros on the off-diagonal.  Since this MVN has no covariances, you can sample each dimension independently (so 4 univariate normals instead of 1 multivariate normal), where the first 3 univariate normals are N(0,0.05) and the last one if N(0,0.005)._
-
-_todo: report the 4 posterior means, standard deviations, and 95% credible intervals and compare them to your results from the Maximum Likelihood approach._
 ```{python}
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-
-# Inputs from earlier steps
 X = conjoint_data_prepped[['brand_N', 'brand_P', 'ad_Yes', 'price']].values
 y = conjoint_data_prepped['choice'].values
 choice_set_ids = conjoint_data_prepped['choice_set'].values
@@ -299,12 +290,10 @@ def metropolis_hastings(start, iterations, burn_in):
 np.random.seed(42)
 posterior_samples = metropolis_hastings(start=np.zeros(4), iterations=11000, burn_in=1000)
 
-# Summarize posterior
 posterior_means = posterior_samples.mean(axis=0)
 posterior_stds = posterior_samples.std(axis=0)
 posterior_cis = np.percentile(posterior_samples, [2.5, 97.5], axis=0).T
 
-# Format output
 params = ["Beta_Netflix", "Beta_Prime", "Beta_Ads", "Beta_Price"]
 bayes_results = pd.DataFrame({
     "Parameter": params,
@@ -316,12 +305,11 @@ bayes_results = pd.DataFrame({
 
 bayes_results
 ```
-_todo: for at least one of the 4 parameters, show the trace plot of the algorithm, as well as the histogram of the posterior distribution._
+
 ```{python}
 import matplotlib.pyplot as plt
 
-# Trace plot and histogram for Beta_Netflix
-beta_idx = 0  # Index 0 = Beta_Netflix
+beta_idx = 0 
 param_name = "Beta_Netflix"
 
 plt.figure(figsize=(12, 5))
@@ -345,16 +333,10 @@ plt.show()
 
 ```
 
-
-
 ## 6. Discussion
 
-_todo: Suppose you did not simulate the data. What do you observe about the parameter estimates? What does $\beta_\text{Netflix} > \beta_\text{Prime}$ mean? Does it make sense that $\beta_\text{price}$ is negative?_
+### Interpreting Parameter Estimates
 
-_todo: At a high level, discuss what change you would need to make in order to simulate data from --- and estimate the parameters of --- a multi-level (aka random-parameter or hierarchical) model. This is the model we use to analyze "real world" conjoint data._
-
-
-Interpreting Parameter Estimates
 Even if we didn’t simulate the data ourselves, we can still learn a lot from the parameter estimates we got. For example, the fact that $\beta_\text{Netflix} > \beta_\text{Prime}$ means that, on average, people in our sample liked Netflix more than Prime. Since Hulu was the baseline (omitted category), this also tells us that Prime was preferred over Hulu, but not as much as Netflix. So in terms of overall appeal, Netflix came out on top.
 
 We also saw that the estimate for $\beta_\text{price}$ was negative. This is what we expect: as the price of a streaming plan goes up, people are less likely to choose it. That makes sense since higher prices usually make a product less attractive.
@@ -363,21 +345,17 @@ The estimate for the ad variable was also negative. This means that people don�
 
 Overall, all of our parameter estimates line up well with what we would expect based on common sense. People prefer Netflix, dislike ads, and try to avoid higher prices.
 
-Toward a Multi-Level (Hierarchical) Model
+### Toward a Multi-Level (Hierarchical) Model
 
 In real-world data, not everyone values things the same way. Some people may care a lot about price, while others focus more on the brand or whether the service has ads. A single set of average parameters doesn’t always capture this variation.
 
 A multi-level model helps us deal with that. Instead of assuming everyone shares the same preferences, this model assumes each person has their own set of part-worth utilities (or $\beta$ values). These individual-level betas come from a larger population distribution, usually assumed to be normal:
-
-
 
 This means that we treat $\mu$ as the average preference across people, and $\Sigma$ captures how much people vary in their preferences.
 
 If we wanted to simulate data under this kind of model, we would first draw a $\beta$ vector for each person from a multivariate normal distribution. Then we would use that $\beta_i$ to simulate choices for that specific person. This lets us build realistic datasets where everyone thinks a little differently.
 
 Estimating these models is a bit more advanced. We often use Bayesian methods like Gibbs sampling or Hamiltonian Monte Carlo (HMC), or we use simulated maximum likelihood in a frequentist framework. These methods take more time and computing power, but they allow us to capture much richer information from our data.
-
-In short, multi-level models are a powerful way to move beyond average preferences and better reflect how real people make choices.
 
 
 
